@@ -5,7 +5,9 @@ body{
 .cards{
     width: 400px;
     height: 400px;
-    border: solid rgb(255, 255, 255);
+    background-color: rgb(51, 55, 58);
+    border: 10px solid rgba(255, 255, 255, 0.945);
+    
     margin: 10px;
     float:left;
 }
