@@ -50,8 +50,6 @@ const getPics = (numOfDivs) => {
     return pics;
 } 
 
-
-
 //alert user when game is finished
 const gameOver = () => {
 
@@ -80,8 +78,6 @@ const hideCards = (divs, clickedDiv, clickedPic, lastDiv, lastPic) => {
     }
     
 }
-
-
 
 //when each card is clicked, show pic corresponding to that card
 const populateCards = (divs, pics) => {
