@@ -1,20 +1,24 @@
+/* setup main css */
 body{
     background-color: #181916;
     font-family: 'Poppins', sans-serif;
 }
 
+/* main title styles */
 h1{
     font-size: 3rem;
     color: #F47C7C;
     margin: 1rem;
 }
 
+/* move counter styles */
 h2{
     margin-top: 0;
     font-size: 2rem;
     color: #FFDE00;
 }
 
+/* background animation button styles */
 button{
     padding: .5rem;
     margin-bottom: 1rem;
@@ -28,6 +32,8 @@ button:hover{
     transform: translateX(-2px) translateY(-2px);
 }
 
+
+/* center items in the main container */
 main{
     display: flex;
     flex-direction: column;
@@ -35,10 +41,12 @@ main{
     margin-bottom: 5rem;
 }
 
+/* make rows horizontal */
 section{
     display: flex;
 }
 
+/* card styles */
 .cards{
     position: relative;
     width: 300px;
@@ -48,6 +56,7 @@ section{
     background: linear-gradient(0deg, #000, #2c2c2c);
 }
 
+/* background lights animation */
 .bg-animation:after{
     
     content: '';
@@ -76,6 +85,7 @@ section{
     }
 }
 
+/* Media Queries to make website responsive */
 @media screen and (max-width: 1075px) {
     
     article{

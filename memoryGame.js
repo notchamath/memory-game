@@ -1,16 +1,5 @@
-// Toggle background lights
-const toggleLights = () => {
-    let cards = getCards();
-    
-    cards.forEach(card => {
-        card.classList.toggle('bg-animation');
-    });
-}
 
-//get all divs that we will use as "cards"
-const getCards = () => {
-    return document.querySelectorAll('.cards');
-}
+//**Model**
 
 //returns a random ints between 1 and num, bounds included
 const randomizer = (num) => {
@@ -59,6 +48,9 @@ const getPics = (numOfDivs) => {
     return pics;
 } 
 
+
+// **View**
+
 //alert user when game is finished
 const gameOver = (totalMoves) => {
 
@@ -68,6 +60,18 @@ const gameOver = (totalMoves) => {
         window.location.reload();
 
     }, '250');
+}
+
+//Display how many moves the player has made
+const displayMoves = (totalMoves) => {
+    let counter = document.querySelector('#counter');
+    counter.innerText = totalMoves;
+}
+
+//Set the background of the clicked card to be the corresponding image
+const setBackground = (clickedDiv, clickedPic) => {
+    clickedDiv.style.backgroundImage = clickedPic;
+    clickedDiv.style.backgroundSize = 'cover';
 }
 
 //when one card is clicked, hide the others, unless if the matching 2 cards are clicked back to back
@@ -88,13 +92,24 @@ const hideCards = (divs, clickedDiv, clickedPic, lastDiv, lastPic, totalMoves) =
     
 }
 
-//Display how many moves the player has made
-const displayMoves = (totalMoves) => {
-    let counter = document.querySelector('#counter');
-    counter.innerText = totalMoves;
+
+// **Controller**
+
+//get all divs that we will use as "cards"
+const getCards = () => {
+    return document.querySelectorAll('.cards');
 }
 
-//when each card is clicked, show pic corresponding to that card
+// Toggle background lights
+const toggleLights = () => {
+    let cards = getCards();
+    
+    cards.forEach(card => {
+        card.classList.toggle('bg-animation');
+    });
+}
+
+//when each card is clicked, show pic corresponding to that card, and record the number of clicks
 const populateCards = (divs, pics) => {
 
     let clickedDiv = '';
@@ -114,9 +129,7 @@ const populateCards = (divs, pics) => {
             clickedDiv = divs[curr];
             clickedPic = pics[curr];
 
-            clickedDiv.style.backgroundImage = clickedPic;
-            clickedDiv.style.backgroundSize = 'cover';
-
+            setBackground(clickedDiv, clickedPic);
             hideCards(divs, clickedDiv, clickedPic, lastDiv, lastPic, totalMoves);
 
             lastDiv = clickedDiv;
