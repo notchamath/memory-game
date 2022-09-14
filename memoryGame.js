@@ -51,22 +51,22 @@ const getPics = (numOfDivs) => {
 } 
 
 //alert user when game is finished
-const gameOver = () => {
+const gameOver = (totalMoves) => {
 
     setTimeout(() => {
 
-        alert('YOU WIN!!!');
+        alert('It took you ' + totalMoves + ' moves to finish the game!');
         window.location.reload();
 
     }, '250');
 }
 
 //when one card is clicked, hide the others, unless if the matching 2 cards are clicked back to back
-const hideCards = (divs, clickedDiv, clickedPic, lastDiv, lastPic) => {
+const hideCards = (divs, clickedDiv, clickedPic, lastDiv, lastPic, totalMoves) => {
 
     if(clickedDiv.id !== lastDiv.id && clickedPic === lastPic){
 
-        gameOver();
+        gameOver(totalMoves);
 
     } else {
 
@@ -79,6 +79,12 @@ const hideCards = (divs, clickedDiv, clickedPic, lastDiv, lastPic) => {
     
 }
 
+//Display how many moves the player has made
+const displayMoves = (totalMoves) => {
+    let counter = document.querySelector('#counter');
+    counter.innerText = totalMoves;
+}
+
 //when each card is clicked, show pic corresponding to that card
 const populateCards = (divs, pics) => {
 
@@ -87,17 +93,22 @@ const populateCards = (divs, pics) => {
     let lastDiv = '';
     let lastPic = '';
 
+    let totalMoves = 0;
+
     for (let curr=0; curr<divs.length; curr++){
 
         divs[curr].addEventListener('mousedown', e => {
             
+            totalMoves++;
+            displayMoves(totalMoves);
+
             clickedDiv = divs[curr];
             clickedPic = pics[curr];
 
             clickedDiv.style.backgroundImage = clickedPic;
             clickedDiv.style.backgroundSize = 'cover';
 
-            hideCards(divs, clickedDiv, clickedPic, lastDiv, lastPic);
+            hideCards(divs, clickedDiv, clickedPic, lastDiv, lastPic, totalMoves);
 
             lastDiv = clickedDiv;
             lastPic = clickedPic;
