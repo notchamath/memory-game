@@ -1,3 +1,12 @@
+// Toggle background lights
+const toggleLights = () => {
+    let cards = getCards();
+    
+    cards.forEach(card => {
+        card.classList.toggle('bg-animation');
+    });
+}
+
 //get all divs that we will use as "cards"
 const getCards = () => {
     return document.querySelectorAll('.cards');
