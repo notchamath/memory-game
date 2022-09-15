@@ -23,16 +23,16 @@ button{
     padding: .5rem;
     margin-bottom: 2rem;
     font-size: 1.2rem;
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: inherit;
-    font-weight: 700;
     cursor: pointer;
-    color: rgb(196, 9, 9);
+    color: white;
     border: 5px solid rgb(196, 9, 9);
     background-color: transparent;
 }
 
 button:hover{
+    font-weight: 700;
     transform: translateX(-2px) translateY(-2px);
     color: white;
     background-color: rgb(196, 9, 9);
