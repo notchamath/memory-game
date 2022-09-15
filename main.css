@@ -104,9 +104,11 @@ section{
 }
 
 @media screen and (max-width: 709px) {
-    
-    article{
-        display: flex;
-        flex-direction: column;
+
+    .cards{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: .5rem;
     }
 }
