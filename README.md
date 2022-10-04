@@ -2,7 +2,7 @@
 
 <img src="/port2.jpg">
 
-## The Idea
+## The Implementation
 This `Fully Responsive` game incorporates `Model–View–Controller Pattern` on the backend. The implementation only uses HTML5, CSS3 & JavaScript. CSS Animations are used for background lighting. 
 
 ### [Play the Game Here](http://chamathcodes.com/memory-game/) 👈
